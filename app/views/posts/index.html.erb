@@ -1,5 +1,11 @@
 <h1> Listing posts</h1>
 
+
+	<h1>Link to demo</h1>
+	<%= link_to "My Blog" ,controller:"posts" %>
+	
+	<%= link_to 'New post', new_post_path %> #new is def post is class and path is key word
+
 <table 
 	<tr>
 		<th>Title</th>
@@ -12,5 +18,6 @@
 		<td> <%= post.text %> </td>
 	</tr>
 	<%end%>
+	
 
 </table>
