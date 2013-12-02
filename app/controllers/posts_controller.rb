@@ -26,7 +26,17 @@ class PostsController < ApplicationController
 		end
 		#show method to show the post tile and text
 
-		
+	def edit
+	@post=Post.find(params[:id])		
+	end
+
+	def update 
+		@post=Post.find(params[:id])
+		if @post.update(params[:post].permit(:title,:text))
+			redirect_to @post
+		else render 'edit'
+		end
+	end
 
 
 end
