@@ -7,6 +7,18 @@ MyMvc::Application.routes.draw do
   resources :posts
 
    root 'welcome#index'
+
+   #DELETE /posts/:id(.:format)      @posts#destroy
+
+   resources :posts do
+    resources :comments
+
+  end
+
+  resources :layouts do
+  end
+
+
  
 
 

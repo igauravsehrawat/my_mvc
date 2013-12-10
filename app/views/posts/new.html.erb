@@ -1,20 +1,5 @@
-<h1> It lies Inside you </h1>
-<i> <h1> It solely depends on you </h1> </i>
-
-<%= form_for :post,	url: posts_path do |f| %>
-
-	<p>
-
-		<%= f.label :title %> <br>
-		<%= f.text_field :title %>
-	</p>
-
-	<p>
-		<%= f.label :text %><br>
-		<%= f.text_area :text %>
-	</p>
-
-	<p>
-		<%= f.submit %>
-	</p>
-<% end %>
+<h1>New post</h1>
+ 
+<%= render 'form' %>
+ 
+<%= link_to 'Back', posts_path %>
