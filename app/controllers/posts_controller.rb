@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+
+	http_basic_authenticate_with name: "Gaurav", password: "lucid_pass",
+	except: [:index, :show]
+
 	def new
 		@post=Post.new
 	end
@@ -21,10 +25,7 @@ class PostsController < ApplicationController
 		@posts=Post.all
 	end
 
-	private
-		def post_params
-			params.require(:post).permit(:title, :text)
-		end
+	
 		#show method to show the post tile and text
 
 	def edit
@@ -46,6 +47,11 @@ class PostsController < ApplicationController
 	 
 	  redirect_to posts_path
 	end
+
+	private
+		def post_params
+			params.require(:post).permit(:title, :text)
+		end
 
 
 end
